@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <!-- Note: defer, here, will tell Vue to wait until everything is loaded before continuing ... making something like a synchrony call -->
+  </head>
+  <body>
+    <div id="app">
+      <!-- Note: here, we have our ID ... the same that's being looked for by VUE when we put '#'app ...
+      Moreover, until we end this /div, whatever is within these tags is the app's contents ... so if we want something to run during app, it needs to be put here-->
+
+      <p>{{ message1 }}</p>
+      <input v-model="message1" />
+    </div>
+  </body>
+</html>

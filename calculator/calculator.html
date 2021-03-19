@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Intro</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }} {{ message2 }}
+      <div>
+        1st number:
+        <!-- Above is text to be displayed -->
+        <!-- I need next to store the user input into a var -->
+        <input v-model="n1" />
+        <!-- type="text" /> -->
+        <!-- <button "number1">numberOne</button> -->
+      </div>
+      <div>
+        {{ n2 }} 2nd number:
+        <input v-model="n2" />
+        <!-- <input type="text" /> -->
+      </div>
+      <div>
+        3rd number:
+        <input v-model="n3" />
+        <!-- <input type="text" /> -->
+      </div>
+      <div><button v-on:click="addNumbers">Compute sum</button></div>
+      <p>The sum is: {{ sum }}</p>
+    </div>
+  </body>
+</html>
