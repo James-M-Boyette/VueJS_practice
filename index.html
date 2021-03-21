@@ -11,9 +11,25 @@
     <div id="app">
       <!-- Note: here, we have our ID ... the same that's being looked for by VUE when we put '#'app ...
       Moreover, until we end this /div, whatever is within these tags is the app's contents ... so if we want something to run during app, it needs to be put here-->
+      <!-- <div><input v-model="message1" /></div> -->
+      <!-- <p>{{ Showing JS here, instead of ref. .js file }}</p> -->
 
-      <p>{{ message1 }}</p>
-      <input v-model="message1" />
+      <hr />
+      <p>*Hide challenge*</p>
+      <p>Can we hide this ?</p>
+      <button v-on:click="hideShow">"Hide a message"</button>
+      <p v-if="false">
+        <!-- This.showSecret = !this.showSecret; -->
+      </p>
+
+      <hr />
+      <p>*Add to Arrays challenge*</p>
+      <!-- This makes a line between elements on the page -->
+      Here are the current fruits in our array:
+      <div v-for="blockVariable in fruits">{{ blockVariable }}</div>
+      <input type="text" v-model="newFruit" />
+      <button v-on:click="addFruit">Add a new fruit</button>
+      <!-- <div class="{{disabled}}">This is kind of a secret</div> -->
     </div>
   </body>
 </html>

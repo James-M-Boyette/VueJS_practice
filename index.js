@@ -6,15 +6,37 @@
 var app = new Vue({
   el: "#app",           // 'el' stands for "element", and is what vue "latches on to" && for '#app' ... the # indicates an "ID"
   // a '.' indicates a class
-  data:                 // Data is a JS object, and has key:value pairs
+  data:  {               // Data is a JS object, and has key:value pairs
                         // This is also where we store our variables - and can show them on the html page
-  
-  function() {
-    return {
       message1: "This is the pre-loaded message ...",
-    };
-  
+      showSecret: false,
+      fruits:["apple", "banana", "honeydew"],
+      newFruit: ""
+      
   },
+  methods: {
+  // function1: function() {
+  //   return {
+  //   };
+  // },
+  hideShow: function(){
+    if (this.showSecret === true) 
+      This.showSecret = false;
+    else {
+      This.showSecret = true;
+      }
+  },
+  addFruit: function(){
+    console.log("adding fruit ..."),
+    // access newFruit
+    console.log(this.newFruit);
+    // access the fruits array
+    console.log(this.fruits);
+    // add newFruit to the fruits array
+    this.fruits.push(this.newFruit);
+    this.fruits.save;
+  }
+}
 });
 
 // var app5 = new Vue({
