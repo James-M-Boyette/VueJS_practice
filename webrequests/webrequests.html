@@ -11,12 +11,15 @@
     <h1>Hello from HTML!</h1>
     <div id="app">
       <!-- {{ message }} -->
-      <input type="text" />
+      <input type="text" v-model="newTodo" />
+      <hr />
       <p>Making Web Requests (A Practice File)</p>
-      <div v-for="todo in todos">
+
+      <!-- <div v-for="todo in todos">
         <p>{{ todos.title}}</p>
-      </div>
-      <button v-on:click="loadTodos">load todos</button>
+      </div> -->
+      <button v-on:click="loadTodos">load all the todos</button>
+      <!-- {{todos}} -->
     </div>
   </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator Attempt #2 (calc2)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="calc2.js" defer></script>
+  </head>
+  <body>
+    <h1>Our HTML "h1" header is showing here</h1>
+    <p></p>
+    <div id="app">
+      {{ message_1 }}
+      <p>{{this.message_2}}</p>
+    <hr />
+      <p>{{m3}}</p>
+      <div>1st number: <input type="text" v-model="n1">{{"... "}}{{n1}} 
+        {{m4}}</div>
+      <div>2nd number: <input type="text" v-model="n2">{{"... "}}{{n2}}{{" => Here's n2, post-user input"}}
+        <!-- {{"... => And here, we've concatonated strings from both JS data variables and direct html input"}} -->
+      </div>
+      <div>3rd number: <input type="text"v-model="n3">{{"... "}}{{n3}}{{" => Annnd n3, post-user input"}}</div>
+      <div>
+        <p><button v-on:click=addNumbers>Add 'em up!</button></p>
+        <p><button v-on:click=subtractNumbers>Subtract 'em</button></p>
+        <p><button v-on:click="multiplyNumbers">Multiply them together!</button></p>
+        <p><button v-on:click="divideNumbers">Divide the first # by the 2nd (and so on)</button></p>
+      </div>
+      <p>The total is: {{total}}</p>
+  </div>
+    </div>
+  </body>
+</html>

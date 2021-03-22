@@ -26,6 +26,9 @@ var app = new Vue({
       this.todos.push(response.data);
     });
     },
+    printArray: function(){
+      console.log(todos);
+    },
   },
   created: function(){
     console.log('in created...');
