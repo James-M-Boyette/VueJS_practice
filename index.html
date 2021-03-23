@@ -31,7 +31,11 @@
         <!--  THIS DIDN'T WORK:
           <p v-bind:class="{{disabled: true}}">
             blerg</p> 
-            Why: using one set of curlies makes what's inside the quotes a js object (an hash/k:v pair) ... 
+            Why: using two curlies is an improper attempt to interpolate - it isn't possible to interpolate by simply writing 
+            <div class="{{showSecret}}">
+            
+            v-bind makes use of a js object (an hash) to 1) refer to the 'truthiness' state of some other thing in your code, and then 2) "turn off/on" the given CSS class for that section of html
+            Note: using one set of curlies makes what's inside the quotes a js object (an hash/k:v pair ... an class_name:true/false) 
 
             Translation to English:
             "Bind all classes listed at right (after '=') to a given explicit true/false setting (or equivalent variable that has such value) and run/comment-out the CSS class"
