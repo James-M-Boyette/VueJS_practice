@@ -28,6 +28,20 @@
       <p>*Hide challenge*</p>
       <p>
         <div v-bind:class="{disabled: showSecret}">(click this button to show some stuff!)</div>
+        <!--  THIS DIDN'T WORK:
+          <p v-bind:class="{{disabled: true}}">
+            blerg</p> 
+            Why: using one set of curlies makes what's inside the quotes a js object (an hash/k:v pair) ... 
+
+            Translation to English:
+            "Bind all classes listed at right (after '=') to a given explicit true/false setting (or equivalent variable that has such value) and run/comment-out the CSS class"
+
+            Also note that this was testing basic on/off, and hadn't yet been connected to the showSecret variable - which gets its 'truthi-ness' re-defined every time the button runs hideShow function from the .js file
+          THIS DIDN'T EITHER:
+          <a v-bind:disabled="showSecret">
+            blerg</a>
+            Why: Here, I had the right idea - trying to grab a specific class form the Header ... but that's done inside the js hash (see above)
+          -->
       </p>
       <button v-on:click="hideShow">Show/Hide a few messages! :</button>
       <p v-if="showSecret">Pea-KA-BOo !</p>
