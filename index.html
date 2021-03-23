@@ -8,7 +8,12 @@
     <!-- Note: defer, here, will tell Vue to wait until everything is loaded before continuing ... making something like a synchrony call -->
     <style>
       .disabled {
-        color: lightgray;
+        color: whitesmoke;
+        transition: .5s ease;
+      }
+      .enabled {
+        color: black;
+        transition: .5s ease;
       }
     </style>
   </head>
@@ -21,11 +26,17 @@
 
       <hr />
       <p>*Hide challenge*</p>
-      <button v-on:click="hideShow">Show/Hide this message:</button>
+      <p>
+        <div v-bind:class="{disabled: showSecret}">(click this button to show some stuff!)</div>
+      </p>
+      <button v-on:click="hideShow">Show/Hide a few messages! :</button>
       <p v-if="showSecret">Pea-KA-BOo !</p>
       <p>*Partial Secret Challenge*</p>
       <p>
-        <a v-bind:class="{disabled: showSecret}">Gray-out this secret</a>
+        <div v-bind:class="{disabled: showSecret, enabled: !showSecret}">(if you click the button above, the text below will *also* beceome more visible!)</div>
+      </p>
+      <p>
+        <div v-bind:class="{disabled: !showSecret, enabled: showSecret}">Gray-out this secret</div>
       </p>
       <p class="disabled">... Like this other one is</p>
       <hr />
