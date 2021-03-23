@@ -23,7 +23,11 @@
       <p>*Hide challenge*</p>
       <button v-on:click="hideShow">Show/Hide this message:</button>
       <p v-if="showSecret">Pea-KA-BOo !</p>
-
+      <p>*Partial Secret Challenge*</p>
+      <p>
+        <a v-bind:disabled="showSecret">Gray-out this secret</a>
+      </p>
+      <p class="disabled">... Like this other one is</p>
       <hr />
       <p>*Add to Arrays challenge*</p>
       <!-- This makes a line between elements on the page -->
@@ -33,8 +37,5 @@
       <button v-on:click="addFruit">Add a new fruit</button>
     </div>
     <hr />
-    <p>*Partial Secret Challenge*</p>
-    <p v-bind:class="{{disabled: true}}">Gray-out this secret</p>
-    <p class="disabled">Gray-out this OTHER secret</p>
   </body>
 </html>
