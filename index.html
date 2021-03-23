@@ -25,7 +25,7 @@
       <p v-if="showSecret">Pea-KA-BOo !</p>
       <p>*Partial Secret Challenge*</p>
       <p>
-        <a v-bind:disabled="showSecret">Gray-out this secret</a>
+        <a v-bind:class="{disabled: showSecret}">Gray-out this secret</a>
       </p>
       <p class="disabled">... Like this other one is</p>
       <hr />
