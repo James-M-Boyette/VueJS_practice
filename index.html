@@ -6,6 +6,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js" defer></script>
     <!-- Note: defer, here, will tell Vue to wait until everything is loaded before continuing ... making something like a synchrony call -->
+    <style>
+      .disabled {
+        color: lightgray;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
@@ -16,11 +21,8 @@
 
       <hr />
       <p>*Hide challenge*</p>
-      <p>Can we hide this ?</p>
-      <button v-on:click="hideShow">"Hide a message"</button>
-      <p v-if="false">
-        <!-- This.showSecret = !this.showSecret; -->
-      </p>
+      <button v-on:click="hideShow">Show/Hide this message:</button>
+      <p v-if="showSecret">Pea-KA-BOo !</p>
 
       <hr />
       <p>*Add to Arrays challenge*</p>
@@ -29,7 +31,10 @@
       <div v-for="blockVariable in fruits">{{ blockVariable }}</div>
       <input type="text" v-model="newFruit" />
       <button v-on:click="addFruit">Add a new fruit</button>
-      <!-- <div class="{{disabled}}">This is kind of a secret</div> -->
     </div>
+    <hr />
+    <p>*Partial Secret Challenge*</p>
+    <p v-bind:class="{{disabled: true}}">Gray-out this secret</p>
+    <p class="disabled">Gray-out this OTHER secret</p>
   </body>
 </html>
